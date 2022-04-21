@@ -9,11 +9,13 @@ import streamlit as st
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
      df = pd.read_csv(uploaded_file, sep='|')
+     df = df.dropna()
+     df.columns = ['id_user', 'id_task', 'platform', 'case']     
      st.write(df)
 
 # %%
-df = df.dropna()
-df.columns = ['id_user', 'id_task', 'platform', 'case']
+# df = df.dropna()
+# df.columns = ['id_user', 'id_task', 'platform', 'case']
 
 # %%
 df = df.sort_values(by='id_user')
