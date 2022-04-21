@@ -7,6 +7,8 @@ import streamlit as st
 
 # %%
 uploaded_file = st.file_uploader("Choose a file")
+
+
 if uploaded_file is not None:
      df = pd.read_csv(uploaded_file, sep='|')
      df = df.dropna()
@@ -19,6 +21,7 @@ else:
              👆 Upload a .csv file first. Sample to try: [biostats.csv](https://people.sc.fsu.edu/~jburkardt/data/csv/biostats.csv)
              """
     )
+    st.stop()
 
 # %%
 # df = df.dropna()
