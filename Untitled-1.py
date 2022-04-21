@@ -10,8 +10,15 @@ uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
      df = pd.read_csv(uploaded_file, sep='|')
      df = df.dropna()
-     df.columns = ['id_user', 'id_task', 'platform', 'case']     
+     df.columns = ['id_user', 'id_task', 'platform', 'case']  
+     file_container = st.expander("Check your uploaded .csv")   
      st.write(df)
+else:
+    st.info(
+        f"""
+             👆 Upload a .csv file first. Sample to try: [biostats.csv](https://people.sc.fsu.edu/~jburkardt/data/csv/biostats.csv)
+             """
+    )
 
 # %%
 # df = df.dropna()
