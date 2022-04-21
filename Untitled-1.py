@@ -6,7 +6,8 @@ import streamlit as st
 #df = pd.read_csv('/Users/arturfattahov/Desktop/users_2.csv', sep='|')
 
 # %%
-uploaded_file = st.file_uploader("Choose a file")
+uploaded_file = st.file_uploader("Choose a file", 
+help="To activate 'wide mode', go to the hamburger menu > Settings > turn on 'wide mode'")
 
 
 if uploaded_file is not None:
@@ -90,5 +91,4 @@ st.write('Процент заказчиков, которые создали х�
 
 # %%
 st.write('Процент пользователей, которые создали хотя бы одну задачу:', ii)
-
 
