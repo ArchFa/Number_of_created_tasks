@@ -6,8 +6,8 @@ import streamlit as st
 #df = pd.read_csv('/Users/arturfattahov/Desktop/users_2.csv', sep='|')
 
 # %%
-uploaded_file = st.file_uploader("Choose a file", 
-help="To activate 'wide mode', go to the hamburger menu > Settings > turn on 'wide mode'")
+uploaded_file = st.file_uploader("Выбирете файл", 
+help="Здесь может быть подсказка'")
 
 
 if uploaded_file is not None:
@@ -19,7 +19,8 @@ if uploaded_file is not None:
 else:
     st.info(
         f"""
-             👆 Upload a .csv file first. Sample to try: [biostats.csv](https://people.sc.fsu.edu/~jburkardt/data/csv/biostats.csv)
+             👆 Загрузите файл с расширением .csv
+             В файле должны стого содержаться следующие столбцы: id пользователя, id задачи, платформа, роль пользователя
              """
     )
     st.stop()
